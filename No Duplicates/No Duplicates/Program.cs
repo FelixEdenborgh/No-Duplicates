@@ -1,10 +1,13 @@
-﻿namespace No_Duplicates
+﻿using System;
+using System.Collections.Generic;
+
+
+namespace No_Duplicates
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a string of characters");
             string input = Console.ReadLine();
 
             string[] words = input.Split(new char[] { ' ' });
@@ -28,19 +31,21 @@
             // KeyValuePair använd när man jobbar med en samling världen som i dictionarys
             foreach (KeyValuePair<string, int> entry in wordCount)
             {
-                if(entry.Value > 1) {
+                if (entry.Value > 1)
+                {
                     hasDublicatedWords = true;
+                    break;
                 }
             }
 
             if (hasDublicatedWords)
             {
-                Console.WriteLine("Yes");
+                Console.WriteLine("no");
             }
-            else { Console.WriteLine("No");
+            else
+            {
+                Console.WriteLine("yes");
             }
-
-
         }
     }
 }
